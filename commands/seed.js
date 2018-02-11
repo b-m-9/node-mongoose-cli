@@ -82,11 +82,11 @@ module.exports.undo = (name) => {
                         console.log('Seed success down: ' + names[index]);
                         wait -= 1;
                     }).catch((err)=>{
-                        console.error('Seed error: '+ names[index],err);
+                        console.red('Seed error: '+ names[index],err);
                         wait -= 1;
                     });
                 else {
-                    console.log('Seed error dont return promise file:' + names[index])
+                    console.red('Seed error dont return promise file:' + names[index]);
                     wait -= 1;
                 }
             }
