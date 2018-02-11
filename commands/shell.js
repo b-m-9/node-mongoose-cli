@@ -4,7 +4,7 @@ var repl = require('repl');
 module.exports = {
   shell: function () {
 
-    var uri = require(process.cwd() + '/models/connection-config');
+    var uri = require(process.cwd() + '/db/connection-config');
     var cmd = uri.match(/^mongodb:\/\/(\w+):(.*?)@(.*?):(\d+)\/(\w+)$/);
     if (!cmd) return console.red('Improperly formatted URI');
 
@@ -38,7 +38,7 @@ module.exports = {
 
   mshell: function mshell() {
     try {
-      require(process.cwd() + '/models/seed/repl.js');
+      require(process.cwd() + '/db/repl.js');
     }
     catch(err) {
       console.error(err);

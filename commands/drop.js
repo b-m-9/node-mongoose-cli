@@ -1,7 +1,7 @@
 var exec = require('child_process').exec;
 
 module.exports = function drop() {
-  var command = 'node ./db/seed/dropfile.js ';
+  var command = 'node ./db/seeders/dropfile.js ';
   var args = [].map.call(arguments, name => name.pascal()).join(' ');
   exec(command + args, function(err, stdout, stderr) {
     if (err) console.error(err);

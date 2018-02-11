@@ -22,7 +22,7 @@ This will give you the `mongoose` command. Type that to get the help page.
 ### 3. Use these commands
 **help:**  Provides details for a command
 
-**seed:**  Runs the seed file in ./db/seed
+**seed:**  Create or Runs the seed file in ./db/seeders
 
 **drop:**  Drops some or all of the collections
 
@@ -73,7 +73,7 @@ module.exports = mongoose.model('User', UserSchema);
 ```
 mongoose-cli seed
 ```
-After initializing the project, thee will be a `models/seed/seedfile.js` that has all the models required automatically. Place DB insertions there and run the command to seed the database.
+After initializing the project, thee will be a `db/seeders/seedfile.js` that has all the models required automatically. Place DB insertions there and run the command to seed the database.
 
 #### Migrations
 ```
