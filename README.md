@@ -82,7 +82,7 @@ mongoose-cli generate migration <model name>
 MongoDB doesn't technically need migrations since the schema is in the application layer. However, if similar operations need to be done on many documents in a collection, a migration file is a convenient place to do that. These files are just scripts with the model required in them. 
 ```javascript
 const mongoose = require('mongoose');
-let User = require('../User.js');
+let User = require('../models/User.js');
 
 
 // manipulate your data here
@@ -98,6 +98,6 @@ Once generated and editted, they need to be run manually, e.g. `node db/migratio
 
 #### Drop collections
 ```
-mongoose drop [model names]
+mongoose-cli drop [model names]
 ```
 Use this command to empty a collection or several. Drop all collections with no arguments.
