@@ -61,11 +61,12 @@ if (!module.parent) {
         if (!func) {
             if (command === 'seed')
                 return console.log(`
-                ${'Seed command'.blue.underline}
-                
-                ${'"mongoose-cli seed run <modelName> or all"'.green}
-                ${'"mongoose-cli seed undo <modelName> or all"'.green}
-                ${'"mongoose-cli seed create <modelName>"'.green}`);
+${'seed command'.blue.underline}
+
+${'"mongoose-cli seed run <modelName> or all"'.green}
+${'"mongoose-cli seed undo <modelName> or all"'.green}
+${'"mongoose-cli seed create <modelName>"'.green}
+`);
 
             return console.red(`Command ${type} does not exist. Try model or migration`);
         }

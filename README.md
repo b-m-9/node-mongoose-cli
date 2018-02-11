@@ -31,7 +31,8 @@ This will give you the `mongoose` command. Type that to get the help page.
 ### 4. Easily connect to MongoDB and require models!
 You can require the models individually, or just require them all like so:
 ```javascript
-var db = require('./db');
+const db = require('./db');
+// db.ModelName.find().then(res=>{}); //example
 ```
 ## Docs
 
@@ -69,11 +70,29 @@ generates this model file called `User.js`:
 module.exports = mongoose.model('User', UserSchema);
 ```
 
-#### Seeding data
+Seeders
+--
+
 ```
-mongoose-cli seed
+mongoose-cli seed create <name-model>
 ```
-After initializing the project, thee will be a `db/seeders/seedfile.js` that has all the models required automatically. Place DB insertions there and run the command to seed the database.
+#### Start seed
+```
+mongoose-cli seed run <name-model>
+```
+or all seeders
+```
+mongoose-cli seed run all
+```
+#### Revert seed
+```
+mongoose-cli seed undo <name-model>
+```
+or all seeders
+```
+mongoose-cli seed undo all
+```
+
 
 #### Migrations
 ```

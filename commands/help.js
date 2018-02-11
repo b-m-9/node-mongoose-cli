@@ -18,7 +18,9 @@ the URI ${'(like depending on the ENV)'.gray}, then you should directly edit the
       console.log(`
 ${'seed command'.blue.underline}
 
-Edit the ${'db/seed/seedfile.js'.yellow}. All models are automatically required. Run the command to execute the seed file.
+${'"mongoose-cli seed run <modelName> or all"'.green}
+${'"mongoose-cli seed undo <modelName> or all"'.green}
+${'"mongoose-cli seed create <modelName>"'.green}
       `); break;
 
     case 'drop':
