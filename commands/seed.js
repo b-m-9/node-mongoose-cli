@@ -19,3 +19,8 @@ module.exports.create = (name) => {
     fs.writeFileSync(`db/seeders/${name}-${Date.now()}.js`, file);
     console.green(`Migration for ${name} was successfully created!`);
 };
+
+module.exports.run = (name) => {
+    if (!name) return console.red('soon');
+
+};
