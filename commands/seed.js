@@ -29,9 +29,9 @@ module.exports.run = (name) => {
     for (let index in names) {
         if (names.hasOwnProperty(index)) {
             if (!names[index].match(/\.js$/)) break;
-            let seedfn = require('./db/seeders/' + names[index]);
+            let seedfn = require(process.cwd() + '/db/seeders/' + names[index]);
             if (seedfn && seedfn.up && typeof seedfn.up === 'function') {
-                console.log('Seed start up'+names[index]+'...');
+                console.log('Seed start up' + names[index] + '...');
                 seedfn.up().then(el => {
                     console.log('Seed success up: ' + names[index])
                 })
@@ -49,9 +49,9 @@ module.exports.undo = (name) => {
     for (let index in names) {
         if (names.hasOwnProperty(index)) {
             if (!names[index].match(/\.js$/)) break;
-            let seedfn = require('./db/seeders/' + names[index]);
+            let seedfn = require(process.cwd() + '/db/seeders/' + names[index]);
             if (seedfn && seedfn.down && typeof seedfn.down === 'function') {
-                console.log('Seed start down'+names[index]+'...');
+                console.log('Seed start down' + names[index] + '...');
                 seedfn.down().then(el => {
                     console.log('Seed success down: ' + names[index])
                 })
