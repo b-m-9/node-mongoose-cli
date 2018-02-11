@@ -33,6 +33,7 @@ const mshell = require('../commands/shell').mshell;
 const init = require('../commands/init');
 const run = require('../commands/seed').run;
 const create = require('../commands/seed').create;
+const undo = require('../commands/seed').undo;
 const drop = require('../commands/drop');
 const setUri = require('../commands/setUri');
 
@@ -42,7 +43,7 @@ const model = require('../commands/model');
 const migration = require('../commands/migration');
 
 commands.create = commands.generate = commands.g = {model, migration, parent: commands};
-commands.seed = {run, create, parent: commands};
+commands.seed = {run, create, undo, parent: commands};
 
 
 // only do this stuff (parsing argv) if its the parent script
@@ -58,8 +59,14 @@ if (!module.parent) {
         args = process.argv.slice(4);
         let func = commands[command][type];
         if (!func) {
-            if(command === 'seed')
-            return console.red(`Command ${type} does not exist. Try "mongoose-cli run [name seed || all] or "mongoose-cli seed create [seed name]"`);
+            if (command === 'seed')
+                return console.log(`
+                ${'Seed command'.blue.underline}
+                
+                ${'"mongoose-cli seed run <modelName> or all"'.green}
+                ${'"mongoose-cli seed undo <modelName> or all"'.green}
+                ${'"mongoose-cli seed create <modelName>"'.green}`);
+
             return console.red(`Command ${type} does not exist. Try model or migration`);
         }
         commands[command][type].apply(commands[command], args);
