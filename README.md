@@ -22,7 +22,7 @@ This will give you the `mongoose` command. Type that to get the help page.
 ### 3. Use these commands
 **help:**  Provides details for a command
 
-**seed:**  Create or Runs the seed file in ./db/seeders
+**seed:**  Create or Runs the seed
 
 **drop:**  Drops some or all of the collections
 

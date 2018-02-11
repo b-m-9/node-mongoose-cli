@@ -11,7 +11,6 @@ module.exports = function init() {
   fs.mkdirSync('./db/seeders');
   fs.mkdirSync('./db/migrations');
   this.setUri('');
-  fs.createReadStream(root + 'templates/dropfile.js').pipe(fs.createWriteStream('db/dropfile.js'));
   fs.createReadStream(root + 'templates/repl.js').pipe(fs.createWriteStream('db/repl.js'));
   fs.createReadStream(root + 'templates/all-models.js').pipe(fs.createWriteStream('db/index.js'));
 }

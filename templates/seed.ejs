@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const db = require('../index');
 'use strict';
 
 module.exports = {
-    up: function (db) {
+    up: function () {
         /*
           Add altering commands here.
           Return a promise to correctly handle asynchronicity.
@@ -15,7 +16,7 @@ module.exports = {
         */
     },
 
-    down: function (db) {
+    down: function () {
         /*
           Add reverting commands here.
           Return a promise to correctly handle asynchronicity.

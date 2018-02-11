@@ -34,10 +34,9 @@ const init = require('../commands/init');
 const run = require('../commands/seed').run;
 const create = require('../commands/seed').create;
 const undo = require('../commands/seed').undo;
-const drop = require('../commands/drop');
 const setUri = require('../commands/setUri');
 
-let commands = {help, init, drop, setUri, shell, mshell};
+let commands = {help, init, setUri, shell, mshell};
 
 const model = require('../commands/model');
 const migration = require('../commands/migration');

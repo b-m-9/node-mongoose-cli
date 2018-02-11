@@ -23,19 +23,6 @@ ${'"mongoose-cli seed undo <modelName> or all"'.green}
 ${'"mongoose-cli seed create <modelName>"'.green}
       `); break;
 
-    case 'drop':
-      console.log(`
-${'drop command'.blue.underline}
-${'"mongoose-cli drop [model names]"'.green}
-
-Drop all collections:
-${'"mongoose-cli drop"'.green}
-
-Drop the user and comment collections
-${'"mongoose-cli drop user comment"'.green}
-
-Empties some or all the collections in the database.
-      `); break;
 
     case 'generate':
     case 'g':
@@ -80,8 +67,7 @@ ${'Commands'.blue.underline}
 ${'help:'.cyan}  Provides details for a command
 ${'init:'.cyan}  Generates directory structure
 ${'setUri:'.cyan}  Sets the connection string for connecting to MongoDB
-${'seed:'.cyan}  Runs the seed file in ./db/seed
-${'drop:'.cyan}  Drops some or all of the collections
+${'seed:'.cyan}  Creates seed or Run, revert seed
 ${'generate:'.cyan}  Creates a model or migration file
 ${'shell:'.cyan}  Opens a native MongoDB shell
 ${'mshell:'.cyan}  Opens a Node.js shell using mongoose-cli methods
