@@ -32,7 +32,7 @@ const shell = require('../commands/shell').shell;
 const mshell = require('../commands/shell').mshell;
 const init = require('../commands/init');
 const run = require('../commands/seed').run;
-const create = require('../commands/seed').create;
+const seed = require('../commands/seed').create;
 const undo = require('../commands/seed').undo;
 const setUri = require('../commands/setUri');
 
@@ -41,8 +41,8 @@ let commands = {help, init, setUri, shell, mshell};
 const model = require('../commands/model');
 const migration = require('../commands/migration');
 
-commands.create = commands.generate = commands.g = {model, migration, parent: commands};
-commands.seed = {run, create, undo, parent: commands};
+commands.create = commands.generate = commands.g = {model, migration,seed, parent: commands};
+commands.seed = {run, undo, parent: commands};
 
 
 // only do this stuff (parsing argv) if its the parent script
@@ -64,10 +64,9 @@ ${'seed command'.blue.underline}
 
 ${'"mongoose-cli seed run <modelName> or all"'.green}
 ${'"mongoose-cli seed undo <modelName> or all"'.green}
-${'"mongoose-cli seed create <modelName>"'.green}
 `);
 
-            return console.red(`Command ${type} does not exist. Try model or migration`);
+            return console.red(`Command ${type} does not exist. Try model or migration or seed`);
         }
         commands[command][type].apply(commands[command], args);
     }

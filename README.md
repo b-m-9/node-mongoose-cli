@@ -22,11 +22,11 @@ This will give you the `mongoose` command. Type that to get the help page.
 ### 3. Use these commands
 **help:**  Provides details for a command
 
-**seed:**  Create or Runs the seed
+**seed:**  Runs or Revert the seed
 
 **drop:**  Drops some or all of the collections
 
-**generate:**  Creates a model or migration file
+**generate:**  Creates a model or migration or seed file
 
 ### 4. Easily connect to MongoDB and require models!
 You can require the models individually, or just require them all like so:
@@ -73,10 +73,12 @@ module.exports = mongoose.model('User', UserSchema);
 Seeders
 --
 
+#### Create seed
 ```
-mongoose-cli seed create <name-model>
+mongoose-cli generate seed <model name>
 ```
-#### Start seed
+
+#### Start seed for model
 ```
 mongoose-cli seed run <name-model>
 ```
@@ -84,7 +86,7 @@ or all seeders
 ```
 mongoose-cli seed run all
 ```
-#### Revert seed
+#### Revert seed for model
 ```
 mongoose-cli seed undo <name-model>
 ```

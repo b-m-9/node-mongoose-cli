@@ -32,9 +32,15 @@ module.exports.run = (name) => {
             let seedfn = require(process.cwd() + '/db/seeders/' + names[index]);
             if (seedfn && seedfn.up && typeof seedfn.up === 'function') {
                 console.log('Seed start up' + names[index] + '...');
-                seedfn.up().then(el => {
-                    console.log('Seed success up: ' + names[index])
-                })
+                let run_inf = seedfn.up();
+                if (run_inf.then)
+                    run_inf.then(el => {
+                        console.log('Seed success up: ' + names[index])
+                    });
+                else {
+                    console.log('Seed error dont return promise file:' + names[index])
+
+                }
             }
         }
     }
@@ -52,9 +58,15 @@ module.exports.undo = (name) => {
             let seedfn = require(process.cwd() + '/db/seeders/' + names[index]);
             if (seedfn && seedfn.down && typeof seedfn.down === 'function') {
                 console.log('Seed start down' + names[index] + '...');
-                seedfn.down().then(el => {
-                    console.log('Seed success down: ' + names[index])
-                })
+                let run_inf = seedfn.down();
+                if (run_inf.then)
+                    run_inf.then(el => {
+                        console.log('Seed success down: ' + names[index])
+                    });
+                else {
+                    console.log('Seed error dont return promise file:' + names[index])
+
+                }
             }
         }
     }
