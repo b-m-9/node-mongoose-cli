@@ -15,7 +15,7 @@ This will give you the `mongoose` command. Type that to get the help page.
 
 ### 2. Set the Mongo URI (configurate)
   ```
-  mongoose-cli setUri 'mongodb://andy:corn@localhost:27017/cli'
+  mongoose-cli setUri 'mongodb://user:pass@localhost:27017/cli'
   ```
   Now you can save to your DB, seed it, drop it, and probe it with one of the shells.
 
