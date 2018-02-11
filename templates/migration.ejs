@@ -4,7 +4,7 @@ var <%- name %> = require('../models/<%- name %>.js');
 
 // manipulate your data here
 <%- name %>.find()
-.then(results => {
-  console.log(results);
-  mongoose.connection.close();
-});
+  .then(results => {
+    console.log(results);
+    mongoose.connection.close();
+  });

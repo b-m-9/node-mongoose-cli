@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 if (mongoose.connection.readyState === 0)
-mongoose.connect(require('../connection-config.js')).catch(err => {console.error('mongoose Error', err)});
+    mongoose.connect(require('../connection-config.js'))
+        .catch(err => {
+            console.error('mongoose Error', err)
+        });
 
 <% if (secure) { %>
 var bcrypt = require('bcrypt-nodejs');
@@ -10,21 +13,21 @@ var bcrypt = require('bcrypt-nodejs');
 let <%- ""+name+"" %>Schema = new Schema({
 <% for (var attr in attrs) { %>
 <%- "'"+attr+"': { type: "+attrs[attr]+" }," %><% } %>
-createdAt: { type: Date, default: Date.now },
-updatedAt: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now }
 });
 
 <%- ""+name+"" %>Schema.pre('save', (next)=> {
-this.updatedAt = Date.now();
-next();
+    this.updatedAt = Date.now();
+    next();
 });
 
 <%- ""+name+"" %>Schema.pre('update', ()=> {
-this.constructor.update({_id: this._id}, { $set: { updatedAt: Date.now() } });
+    this.constructor.update({_id: this._id}, { $set: { updatedAt: Date.now() } });
 });
 
 <%- ""+name+"" %>Schema.pre('findOneAndUpdate', ()=> {
-this.constructor.update({_id: this._id}, { $set: { updatedAt: Date.now() } });
+    this.constructor.update({_id: this._id}, { $set: { updatedAt: Date.now() } });
 });
 
 <% secureAttrs.forEach(function(name) { %>
