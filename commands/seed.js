@@ -4,7 +4,7 @@ var root = __dirname + '/../';
 
 
 module.exports.create = (name) => {
-    if (!name) return console.red('You must specify the model for this migration');
+    if (!name) return console.red('Name seed is not defined');
     name = name.pascal();
     let models = fs.readdirSync('./db/models');
 
@@ -21,7 +21,7 @@ module.exports.create = (name) => {
 };
 
 module.exports.run = (name) => {
-    if (!name) return console.red('You must specify the model for this migration');
+    if (!name) return console.red('Name seed is not defined');
     if (name !== 'all') return console.red('Soon run once seed');
 
     let names = fs.readdirSync('./db/seeders');
