@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/medve-dev/db-mongoose-cli.git"
+    "url": "git+https://github.com/medve-dev/node-mongoose-cli.git"
   },
   "author": "Bogdan Medvedev <200.medvedev@gmail.com> (https://github.com/medve_dev)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/medve-dev/db-mongoose-cli/issues"
+    "url": "https://github.com/medve-dev/node-mongoose-cli/issues"
   },
-  "homepage": "https://github.com/medve-dev/db-mongoose-cli#home",
+  "homepage": "https://github.com/medve-dev/node-mongoose-cli#home",
   "keywords": [
     "mongoose",
     "cli",
