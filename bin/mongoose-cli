@@ -57,7 +57,11 @@ if (!module.parent) {
     else if (typeof commands[command] === 'object') {
         args = process.argv.slice(4);
         let func = commands[command][type];
-        if (!func) return console.red(`Command ${type} does not exist. Try model or migration`);
+        if (!func) {
+            if(command === 'seed')
+            return console.red(`Command ${type} does not exist. Try "mongoose-cli run [name seed || all] or "mongoose-cli seed create [seed name]"`);
+            return console.red(`Command ${type} does not exist. Try model or migration`);
+        }
         commands[command][type].apply(commands[command], args);
     }
     else if (typeof commands[command] === 'function') {
