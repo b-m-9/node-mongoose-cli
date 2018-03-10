@@ -1,4 +1,6 @@
 # mongoose-cli
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmedve-dev%2Fnode-mongoose-cli.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmedve-dev%2Fnode-mongoose-cli?ref=badge_shield)
+
 
 A handy CLI for speeding up mongoose-related workflow. Generate model and migration files automatically, and seed data.
 
@@ -122,3 +124,6 @@ Once generated and editted, they need to be run manually, e.g. `node db/migratio
 mongoose-cli drop [model names]
 ```
 Use this command to empty a collection or several. Drop all collections with no arguments.
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmedve-dev%2Fnode-mongoose-cli.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmedve-dev%2Fnode-mongoose-cli?ref=badge_large)
