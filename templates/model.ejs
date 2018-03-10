@@ -17,21 +17,21 @@ let <%- ""+name+"" %>Schema = new Schema({
     updatedAt: { type: Date, default: Date.now }
 });
 
-<%- ""+name+"" %>Schema.pre('save', (next)=> {
+<%- ""+name+"" %>Schema.pre('save', function (next) {
     this.updatedAt = Date.now();
     next();
 });
 
-<%- ""+name+"" %>Schema.pre('update', ()=> {
+<%- ""+name+"" %>Schema.pre('update', function () {
     this.constructor.update({_id: this._id}, { $set: { updatedAt: Date.now() } });
 });
 
-<%- ""+name+"" %>Schema.pre('findOneAndUpdate', ()=> {
+<%- ""+name+"" %>Schema.pre('findOneAndUpdate', function () {
     this.constructor.update({_id: this._id}, { $set: { updatedAt: Date.now() } });
 });
 
 <% secureAttrs.forEach(function(name) { %>
-<%- ""+name+"" %>Schema.pre('save', (next)=> {
+<%- ""+name+"" %>Schema.pre('save', function (next) {
 var record = this;
 
 // only hash if it has been modified (or is new)
