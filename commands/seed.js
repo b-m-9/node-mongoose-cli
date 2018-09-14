@@ -11,7 +11,7 @@ module.exports.create = (name) => {
     // make sure this model exists
     let modelInd = models.indexOf(name + '.js');
     if (modelInd === -1)
-        return console.red('You have yet to create a model: ' + name);
+         console.warn('You have yet to create a model: ' + name);
 
     console.cyan('Creating a Seed file for: ' + name);
     let file = ejs.render(fs.readFileSync(root + 'templates/seed.ejs', 'utf-8'), {name});
@@ -52,7 +52,7 @@ module.exports.run = (name) => {
     }
 
     setInterval(()=>{
-        console.green(`Seeders up was successfully created!`);
+        console.green(`Seeders up was successfully!`);
         if(wait === 0) return process.exit(0);
     },500);
     setTimeout(()=>{
