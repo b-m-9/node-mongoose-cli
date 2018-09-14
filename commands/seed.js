@@ -21,6 +21,7 @@ module.exports.create = (name) => {
 };
 
 module.exports.run = (name) => {
+    return console.error('SOON');
     let wait = 1;
     if (!name) return console.red('Name seed is not defined');
     if (name !== 'all') return console.red('Soon run once seed');

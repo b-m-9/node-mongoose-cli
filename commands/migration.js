@@ -11,7 +11,7 @@ module.exports = function migration(name) {
     // make sure this model exists
     var modelInd = models.indexOf(name + '.js');
     if (modelInd === -1)
-        console.red('You have yet to create a model: ' + name);
+        console.warn('You have yet to create a model: ' + name);
 
     console.cyan('Creating a migration file for: ' + name);
     var file = ejs.render(fs.readFileSync(root + 'templates/migration.ejs', 'utf-8'), {name});
